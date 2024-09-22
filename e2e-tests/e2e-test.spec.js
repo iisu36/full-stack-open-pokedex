@@ -10,4 +10,10 @@ describe('Pokedex', () => {
       )
     ).toBeVisible()
   })
+  test('single pokemon page can be opened', async ({ page }) => {
+    await page.goto('')
+    await page.goto('/pokemon/ivysaur')
+    await expect(page.getByText('chlorophyll')).toBeVisible()
+    await expect(page.getByText('overgrow')).toBeVisible()
+  })
 })
