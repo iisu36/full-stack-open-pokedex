@@ -19,8 +19,8 @@ jobs:
         run: |
           ls -l
       - env:
-          COMMIT_MESSAGES: ${{ join(github.event.commits.*.message) }}
-          VALUE: ${{ !contains(join(github.event.commits.*.message), '#skip') }}
+          COMMIT_MESSAGES: ${{ join(github.event.commits.*.message, ', ') }}
+          VALUE: ${{ !contains(join(github.event.commits.*.message, ', '), '#skip') }}
         run: |
           echo "Commit messages: $COMMIT_MESSAGES"
           echo "Does not contain '#skip': $VALUE"
