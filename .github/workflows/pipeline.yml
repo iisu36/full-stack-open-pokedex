@@ -42,7 +42,7 @@ jobs:
   tag_release:
     runs-on: ubuntu-20.04
     needs: [simple_deployment_pipeline]
-    if: ${{ !contains(github.event.head_commit.message, '#skip') }}
+    if: ${{ !contains(join(github.event.commits.*.message), '#skip') }}
     steps:
       - uses: actions/checkout@v4
       - name: Bump version and push tag
