@@ -45,7 +45,7 @@ jobs:
         with:
           severity: error
           text: Build failed
-          description: commit ${{ github.event.head_commit.url }} by ${{ github.event.head_commit.author.name }} broke the build :(
+          description: commit ${{ github.event.head_commit.url }} by ${{ github.event.head_commit.committer.username }} broke the build :(
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
   tag_release:
     runs-on: ubuntu-20.04
@@ -67,5 +67,5 @@ jobs:
         with:
           severity: info
           text: A new version of Pokedex deployed
-          description: to ${{env.APP_URL}} by ${{ github.event.head_commit.author.name }}
+          description: to ${{env.APP_URL}} by ${{ github.event.head_commit.committer.username }}
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
