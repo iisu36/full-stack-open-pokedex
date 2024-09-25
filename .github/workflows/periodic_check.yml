@@ -16,7 +16,7 @@ jobs:
         uses: jtalk/url-health-check-action@v4
         with:
           # Check the following URLs one by one sequentially
-          url: https://full-stack-open-pokedex-misty-cherry-3629.fly.dev/health
+          url: https://full-stack-open-pokedex-misty-cherry-3629.fly.dev/periodictest
           # Follow redirects, or just report success on 3xx status codes
           follow-redirect: false # Optional, defaults to "false"
           # Fail this action after this many failed attempts
