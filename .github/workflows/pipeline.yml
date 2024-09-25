@@ -62,8 +62,10 @@ jobs:
       - name: Test Success
         uses: rjstone/discord-webhook-notify@v1
         if: success()
+        env:
+          APP_URL: https://full-stack-open-pokedex-misty-cherry-3629.fly.dev
         with:
           severity: info
           text: A new version of Pokedex deployed
-          description: to https://full-stack-open-pokedex-misty-cherry-3629.fly.dev by ${{ github.event.head_commit.author.name }}
+          description: to ${{env.APP_URL}} by ${{ github.event.head_commit.author.name }}
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
