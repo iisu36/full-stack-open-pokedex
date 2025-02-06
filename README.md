@@ -1,3 +1,5 @@
+Exercises 11.20 & 11.21 [here](https://github.com/iisu36/notes)
+
 # Full Stack open CI/CD
 
 This repository is used for the CI/CD module of the Full stack open course
